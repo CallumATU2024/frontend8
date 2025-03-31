@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>status</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Writeing the satus and logging it -->
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-radio-group [(ngModel)]="status">
+    <ion-item>
+      <ion-label>Happy</ion-label>
+      <ion-radio slot="end" value="Happy"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sad</ion-label>
+      <ion-radio slot="end" value="Sad"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Energetic</ion-label>
+      <ion-radio slot="end" value="Energetic"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lazy</ion-label>
+      <ion-radio slot="end" value="Lazy"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  </ion-list>
+
+  <ion-button (click)="onButtonClick()">Save</ion-button>
+  
+</ion-content>

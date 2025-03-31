@@ -28,12 +28,26 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
+            
+              "assets": [
               {
+              "glob": "**/*",
+              "input": "src/assets",
+              "output": "assets"
+              },
+              
+              
+                           {
+                "glob": "manifest.webmanifest",
+                "input": "public",
+                "output": "./"
+                },
+                {
                 "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              }
+                "input": "public/icons",
+                "output": "./icons"
+                }
+                
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": [],
@@ -59,7 +73,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -129,7 +144,10 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@ionic/angular-toolkit"]
+    "schematicCollections": [
+      "@ionic/angular-toolkit"
+    ],
+    "analytics": "660b1e49-b57e-4ced-9099-177dc894b1b8"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
